@@ -1,0 +1,28 @@
+install docker CE 
+https://developer.aliyun.com/mirror/docker-ce?spm=a2c6h.13651102.0.0.57e31b115fwFId
+
+CentOS 7
+# step 1: install some necessary system tools
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+# Step 2: add software repo
+sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+# Step 3
+sudo sed -i 's+download.docker.com+mirrors.aliyun.com/docker-ce+' /etc/yum.repos.d/docker-ce.repo
+# Step 4: uodate and install Docker-CE
+sudo yum makecache fast
+sudo yum -y install docker-ce
+# Step 4: start docker
+sudo service docker start
+#check docker version
+
+install nginx by docker
+#check local latest version, if doesn't exit then fetching online
+docker run -d nginx:latest
+#checking running threads
+docker ps
+#chekcing nginx ip
+docker inspect pid
+#lookup ip
+ip a s
+#observe nginx
+curl http://ipAddress
