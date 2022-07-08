@@ -26,3 +26,28 @@ docker inspect pid
 ip a s
 #observe nginx
 curl http://ipAddress
+
+#docker help
+docker -h
+https://docs.docker.com/engine/reference/commandline/docker/
+
+#quit docker without close it 
+ctrl p and q 
+
+#export command result to terminal
+docker exec [commad]
+
+#enter specific container
+docker attach [ps]
+
+#start/stop a container
+docker start/stop [pid]
+
+#lookup one of docker threads
+docker top [pid]
+
+#remove container single
+docker rm [pid] 
+
+#remove container multiple escaping title
+docker ps --all | awk '{if(NR>=2){print $1}}' | xargs docker rm
